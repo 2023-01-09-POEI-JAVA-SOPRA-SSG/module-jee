@@ -7,24 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ExempleWrite
- */
-@WebServlet("/exemplewrite")
-public class ExempleWrite extends HttpServlet {
+
+@WebServlet("/step1")
+public class Step1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		// http://localhost:8080/<nom du projet>/exemplewrite?login=jee
-		
+		//http://localhost:8080/<votre nom de projet>/step1?login=java&password=jee
 		String login = request.getParameter("login");
-		System.out.println(login);
+		String password = request.getParameter("password");
 		
-		response.getWriter().write("Bonjour :" + login);
+		System.out.println("Login :" + login + "    password :" + password);
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 }
-
-
-
