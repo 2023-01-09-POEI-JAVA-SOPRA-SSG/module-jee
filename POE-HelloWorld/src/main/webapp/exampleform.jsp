@@ -10,7 +10,11 @@
 		<h1>Hello from example form</h1>
 		
 		<form action="exempleform" method="post">
-			<input type="text" name="login">
+			<label for="login">Login :</label>
+			<input type="text" name="login"><br>
+		
+			<label for="password">Password :</label>
+			<input type="password" name="password"><br>
 		
 			<input type="submit" value="Click">
 		</form>

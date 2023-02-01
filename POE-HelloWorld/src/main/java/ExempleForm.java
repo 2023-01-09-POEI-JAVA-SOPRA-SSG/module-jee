@@ -23,7 +23,15 @@ public class ExempleForm extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String login = request.getParameter("login");
-		System.out.println("Login :" + login);
-
+		String password = request.getParameter("password");
+		
+		System.out.println("Login :" + login + "\nPassword :" + password);
+		
+		if ("tata".equals(login) && "toto".equals(password)) {
+			response.getWriter().write("OK");
+		} else {
+			response.getWriter().write("KO");
+		}
+		
 	}
 }
