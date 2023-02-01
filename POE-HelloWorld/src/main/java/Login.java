@@ -28,7 +28,6 @@ public class Login extends HttpServlet {
 		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
 
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("In do Post");
