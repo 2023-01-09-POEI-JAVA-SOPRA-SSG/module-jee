@@ -20,6 +20,7 @@ public class Step3 extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		if (login == null || password == null) {
+			
 				response.setStatus(500);
 				
 		}else {
@@ -32,8 +33,6 @@ public class Step3 extends HttpServlet {
 			
 			request.getRequestDispatcher("step3.jsp").forward(request, response);
 			
-		}
-		
-		
+		}		
 	}
 }
