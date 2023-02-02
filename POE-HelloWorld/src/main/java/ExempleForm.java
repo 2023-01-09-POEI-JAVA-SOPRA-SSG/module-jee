@@ -28,7 +28,7 @@ public class ExempleForm extends HttpServlet {
 		System.out.println("Login :" + login + "\nPassword :" + password);
 		
 		if ("tata".equals(login) && "toto".equals(password)) {
-			response.getWriter().write("OK");
+			response.getWriter().append("OK");
 		} else {
 			response.getWriter().write("KO");
 		}
