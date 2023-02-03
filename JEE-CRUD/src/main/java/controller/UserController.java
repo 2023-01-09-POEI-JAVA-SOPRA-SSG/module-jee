@@ -67,21 +67,25 @@ public class UserController extends HttpServlet {
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User u = service.createUserFromRequest(request);
+		
+		
 		service.updateUser(u);
 	}
 
 
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = -1;
 		try {
-			id = Integer.parseInt( request.getParameter("id"));
+			int id = Integer.parseInt( request.getParameter("id"));
+			
+			
+			if ( service.deleteUser(id) == true ) {
+				response.setStatus(200);
+			} else {
+				response.setStatus(405);
+			}
 		} catch (Exception e) {
+			response.setStatus(400);
 		}
-		
-		if (id != -1) {
-			service.deleteUser(id);
-		}
-		
 	}
 
 }

@@ -57,7 +57,7 @@ public class UserService {
 		
 	}
 	
-	public void deleteUser(int id) {
+	public boolean deleteUser(int id) {
 		
 		User found = null;
 		
@@ -67,7 +67,13 @@ public class UserService {
 			}
 		}
 		
-		usersDB.remove(found);
+		if (found == null) {
+			return false;
+		} else {
+			usersDB.remove(found);
+			return true;
+		}
+		
 	}
 	
 	
