@@ -3,6 +3,7 @@ package dao;
 import java.util.ArrayList;
 
 import entity.Product;
+import entity.User;
 
 public class Database {
 
@@ -14,4 +15,17 @@ public class Database {
 			add(new Product(1,"Clavier", "Super clavier sans fil", 18 , "Dell"));
 		}
 	};
+	
+	
+	public static ArrayList<User> user = new ArrayList<User>() {
+		{
+			add( new User(1, 26, "Java", "example@laposte.net", "azerty", 2) );
+			add( new User(2, 28, "Jee", "example@laposte.net", "azerty", 2) );
+			add( new User(3, 32, "Jakarta", "example@laposte.net", "azerty", 2) );
+			add( new User(4, 21, "JUnit", "example@laposte.net", "azerty", 2) );
+			add( new User(5, 41, "Mysql", "example@laposte.net", "azerty", 2) );
+		}
+	};
+	
+	
 }

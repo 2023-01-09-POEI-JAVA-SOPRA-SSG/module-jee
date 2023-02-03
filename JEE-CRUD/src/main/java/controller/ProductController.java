@@ -32,7 +32,7 @@ public class ProductController extends HttpServlet {
 		catch (NumberFormatException e) {
 			
 		}
-		
+				
 		String json = "";
 		response.setContentType("application/json");
 		
