@@ -69,7 +69,7 @@ public class FollowersService {
 		try {
 			Connection con = UtileConnection.seConnecter();
 			
-			String query = "INSERT INTO followers (name, age) VALUE ('"+ f.getName() +"',"+ f.getAge() +");";
+			String query = "INSERT INTO followers (name, age) VALUES ('"+ f.getName() +"',"+ f.getAge() +");";
 			
 			con.createStatement().execute(query);
 			
@@ -107,13 +107,4 @@ public class FollowersService {
 		
 
 	}
-
-	
-	
-	public static void main(String[] args) {
-		FollowersService service = new FollowersService();
-		
-		System.out.println( service.getAll());
-	}
-	
 }
