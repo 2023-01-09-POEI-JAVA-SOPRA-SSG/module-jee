@@ -9,7 +9,7 @@
 <body>
 	<h1>Create</h1>
 	
-	<form action="/Followers-MVC/add" method="post">
+	<form method="post">
 		<label for='txtName'>Nom</label>
 		<input type='text' name='txtName'> <br/>
 		

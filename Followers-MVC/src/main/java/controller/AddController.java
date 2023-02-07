@@ -31,6 +31,8 @@ public class AddController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("in do post");
+		
 		try {
 			String name = request.getParameter("txtName");
 			int level = Integer.parseInt( request.getParameter("txtLevel"));
@@ -40,7 +42,7 @@ public class AddController extends HttpServlet {
 			Characters c = new Characters(name, level, size, type);
 			service.create(c);
 			
-			request.getRequestDispatcher("show").forward(request, response);
+			request.getRequestDispatcher("/show").forward(request, response);
 			
 		} catch (Exception e) {
 			 doGet(request, response);

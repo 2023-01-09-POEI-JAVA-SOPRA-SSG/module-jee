@@ -7,23 +7,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import services.CharacterService;
 
-@WebServlet("/show")
-public class ShowController extends HttpServlet {
+
+@WebServlet("/delete")
+public class DeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
-    public ShowController() {
+	CharacterService service;
+	
+    public DeleteController() {
         super();
+        service = new CharacterService();
     }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("In do Get");
 
-		request.getRequestDispatcher("ShowView.jsp").forward(request, response);
-	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		try {
+			int id = Integer.parseInt( request.getParameter("id"));
+			service.delete(id);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		request.getRequestDispatcher("show").forward(request, response);
 	}
 }

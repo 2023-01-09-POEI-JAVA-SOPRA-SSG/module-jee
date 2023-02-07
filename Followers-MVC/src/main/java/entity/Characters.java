@@ -26,6 +26,7 @@ public class Characters {
 		this.size = size;
 		this.type = type;
 	}
+	
 	public Characters(String name, int level, int size, String type) {
 		super();
 		this.name = name;
@@ -33,9 +34,11 @@ public class Characters {
 		this.size = size;
 		this.type = type;
 	}
+	
 	public int getId() {
 		return id;
-	}
+	}	
+	
 	public void setId(int id) {
 		this.id = id;
 	}
